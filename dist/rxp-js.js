@@ -358,7 +358,9 @@ var RealexHpp = (function () {
 					var form = document.createElement("form");
 					form.setAttribute("method", "POST");
 					form.setAttribute("action", merchantUrl);
-
+					if(isEmbedded){
+						form.setAttribute("target", "_blank");
+					}
 					form.appendChild(internal.createFormHiddenInput("hppResponse", response));
 
 					document.body.appendChild(form);
